@@ -106,3 +106,11 @@ sys_trace(void)
   return trace(mask);
 }
 
+uint64
+sys_sysinfo(void)
+{
+  uint64 st;
+  if(argaddr(0, &st) < 0)
+    return -1;
+  return sysinfo(st); 
+}
